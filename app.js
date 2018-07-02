@@ -9,7 +9,8 @@ sdk.service({}, (err, flex) => {
 	const functions = flex.functions;
 
 	// Endpoints
-	functions.register('members', members);
+	functions.register('balance', members.balance);
+	functions.register('member', members.member);
 	functions.register('items', items);
 	// functions.register('survey', survey);
 
