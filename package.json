@@ -1,0 +1,17 @@
+{
+  "name": "kinvey-poc",
+  "version": "1.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kinvey-flex-sdk": "3.0.0",
+    "kinvey-node-sdk": "3.11.2",
+    "request": "2.87.0"
+  }
+}
