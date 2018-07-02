@@ -3,7 +3,7 @@ let sdk = require('kinvey-flex-sdk');
 
 // Functions
 const members = require('./functions/members');
-const items = require('./functions/items/')
+const item = require('./functions/items')
 
 sdk.service({}, (err, flex) => {
 	const functions = flex.functions;
@@ -11,7 +11,7 @@ sdk.service({}, (err, flex) => {
 	// Endpoints
 	functions.register('balance', members.balance);
 	functions.register('member', members.member);
-	functions.register('items', items);
+	functions.register('item', item.item);
 	// functions.register('survey', survey);
 
 })
