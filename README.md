@@ -3,34 +3,34 @@
 ## Setup
 ---
 ### Kinvey
-npm i -g kinvey-cli  
+npm i -g kinvey-cli\
 
 <!-- Setup -->
-[Kinvey Flex Service Documentation](https://devcenter.kinvey.com/rest/guides/flexservice-runtime/ 'Kinvey Flex Service Documentation')  
-kinvey init | (kinvey email/password, no instanceId, profile nickname)  
-cd <node.js project dir>  
-kinvey flex init  
+[Kinvey Flex Service Documentation](https://devcenter.kinvey.com/rest/guides/flexservice-runtime/ 'Kinvey Flex Service Documentation')\
+kinvey init | (kinvey email/password, no instanceId, profile nickname)\
+cd <node.js project dir>\
+kinvey flex init\
 
 ---
 ### Initialize Node
 <!-- Project Setup -->
-npm init  
-npm i --save kinvey-flex-sdk request  
-node .  
+npm init\
+npm i --save kinvey-flex-sdk request\
+node .\
 
 ---
 ### Run locally
 
-  npm install (first time to install dependencies)  
-  node app.js  (or nodemon if globally installed)  
+npm install (first time to install dependencies)\
+node app.js (or nodemon if globally installed)\
 
 <!-- Deploy -->
 <!-- kinvey flex deploy -->
-<!-- kinvey flex logs? (TODO: Figure out the correct  command) -->
+<!-- kinvey flex logs? (TODO: Figure out the correct\command) -->
 
 ---
 ### Deploy to Kinvey
-npm run kinvey (Runs 'kinvey' script from package.json)  
+npm run kinvey (Runs 'kinvey' script from package.json)\
 
 <!-- 
 complete() object defined:
