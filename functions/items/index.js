@@ -1,6 +1,8 @@
 const service = require('../../utils/services.js');
 const request = require('request');
 
+let endpoint = 'getItemEligibility';
+
 const item = (context, complete, modules) => {
 	let body = context.body;
 	let token = body.token;
@@ -12,12 +14,10 @@ const item = (context, complete, modules) => {
 		'mobileAppVersion': '1.0',
 		'success': 'true'
 	}
-	let endpoint = 'getItemEligibility';
 	let opts = service.getOptions(endpoint, data, token);
 
 	request(opts, function( err, resp, body ) {
 		console.log(body)
-		console.log(resp)
 		if (err) {
 			return complete().setBody(err).badRequest().done();
 		} else if (body != null) {

@@ -11,7 +11,7 @@ sdk.service({}, (err, flex) => {
 	// Endpoints
 	functions.register('balance', members.balance);
 	functions.register('member', members.member);
+	functions.register('retailers', members.retailers);
 	functions.register('item', item.item);
 	// functions.register('survey', survey);
-
 })
