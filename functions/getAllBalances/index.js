@@ -1,5 +1,6 @@
 const service = require('../../utils/services.js');
 const request = require('request');
+const rp = require('request-promise');
 
 const getAllBalances = (context, complete, modules) => {
 	let objectBody = context.body;
@@ -13,27 +14,27 @@ const getAllBalances = (context, complete, modules) => {
 		}
 		let endpoint = 'getMemberDetails';
 		let opts = service.getOptions(endpoint, data, token);
-		let promise = new Promise((resolve, reject) => {
-			request(opts, function( err, resp, body ) {
-				console.log(`body: ${JSON.stringify(body, null, 2)}`);
-				if (err) {
-					// return complete().setBody(err).badRequest().done();
-				} else if (body != null) {
-					let data = {
-						'balance': body.cardBalance
-					}
-					return complete().setBody(data).ok().done();
-				} else {
-					// return complete().setBody({'message': 'There is no data'}).badRequest().done();
-				}
+
+		let myPromise = new Promise((resolve, reject) => {
+			let newRequest = rp(opts).then( parsedBody => {
+				resolve({'body': parsedBody});
+			}).catch( err => {
+				reject({'error': err});
 			});
 		});
-		promiseArray.push(promise);
+		promiseArray.push(myPromise);
 	}
 
-	Promise.all(promiseArray).then(response => {
-		console.log("POST PROMISE")
-		console.log(promise);
+	Promise.all(promiseArray).then(data => {
+		let dataArray = [];
+		for (card of data) {
+			data = {
+				'serialNumber': card.body.serialNumber,
+				'balance': card.body.cardBalance
+			}
+			dataArray.push(data);
+		}
+		complete().setBody(dataArray).ok().next();
 	});
 };
 
