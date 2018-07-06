@@ -11,8 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "kinvey-flex-sdk": "3.0.0",
+    "kinvey-flex-sdk": "^3.0.0",
     "kinvey-node-sdk": "3.11.2",
-    "request": "2.87.0"
-  }
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rblanch-incomm/kinvey_research.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rblanch-incomm/kinvey_research/issues"
+  },
+  "homepage": "https://github.com/rblanch-incomm/kinvey_research#readme"
 }
