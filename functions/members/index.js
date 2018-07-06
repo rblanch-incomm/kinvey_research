@@ -15,6 +15,7 @@ const memberDetails = (context, complete, modules) => {
 
 		request(opts, function( err, resp, body ) {
 		console.log(body)
+		console.log(JSON.stringify(body));
 		if (err) {
 			return complete().setBody(err).badRequest().done();
 		} else if (body != null) {
